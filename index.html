@@ -294,6 +294,103 @@
         }
         
         /* WhatsApp Groups */
+        .group-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .icon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .icon-container.whatsapp {
+            background: #25D366;
+        }
+
+        .icon-container i {
+            color: white;
+            font-size: 18px;
+        }
+
+        .group-info {
+            flex-grow: 1;
+        }
+
+        .group-title {
+            margin: 0;
+            color: #075E54;
+            font-weight: bold;
+        }
+
+        .group-stats {
+            color: #666;
+        }
+        
+        .group-description {
+            color: #4A5568;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .group-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .group-tag {
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+
+        .vip-tag {
+            background: #E3F2FD;
+            color: #1976D2;
+        }
+
+        .success-tag {
+            background: #E8F5E8;
+            color: #2E7D32;
+        }
+
+        .football-tag {
+            background: #FFF3E0;
+            color: #E65100;
+        }
+
+        .tips-tag {
+            background: #E8F5E8;
+            color: #2E7D32;
+        }
+
+        .multisport-tag {
+            background: #F3E5F5;
+            color: #7B1FA2;
+        }
+
+        .allsports-tag {
+            background: #E8F5E8;
+            color: #2E7D32;
+        }
+
+        .btn-join-whatsapp {
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
         .group-card {
             background: white;
             border-radius: 12px;
@@ -589,6 +686,70 @@
         }
         
         /* Betting Codes */
+        .exclusive-codes-title {
+            color: #ffffff;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 2.5rem;
+        }
+
+        .exclusive-codes-subtitle {
+            color: #f0f8ff;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .code-card-code {
+            color: #1a202c;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .code-card-sport-badge {
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .code-card-sport-badge.football {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+        }
+
+        .code-card-sport-badge.basketball {
+            background: linear-gradient(135deg, #ed64a6, #d53f8c);
+        }
+
+        .code-card-sport-badge.default {
+            background: linear-gradient(135deg, #9f7aea, #805ad5);
+        }
+
+        .code-card-odds {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .code-card-odds strong {
+            color: #2d3748;
+            font-size: 1.1rem;
+        }
+
+        .code-card-odds i {
+            color: #48bb78;
+        }
+
+        .btn-copy-code {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
         .code-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -842,6 +1003,41 @@
             color: var(--primary-green);
         }
         
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+        }
+
+        #scrollToTop {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-blue));
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: none;
+            z-index: 1000;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .promo-code {
@@ -876,6 +1072,10 @@
             
             .ai-chat-body {
                 height: 300px;
+            }
+
+            .notification-badge::before {
+                right: -10px;
             }
         }
     </style>
@@ -1038,21 +1238,21 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="group-card active">
-                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                            <div style="width: 40px; height: 40px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                                <i class="fab fa-whatsapp" style="color: white; font-size: 18px;"></i>
+                        <div class="group-card-header">
+                            <div class="icon-container whatsapp">
+                                <i class="fab fa-whatsapp"></i>
                             </div>
-                            <div>
-                                <h5 style="margin: 0; color: #075E54; font-weight: bold;">VIP Winners Group</h5>
-                                <small style="color: #666;">248 members • 78% success</small>
+                            <div class="group-info">
+                                <h5 class="group-title">VIP Winners Group</h5>
+                                <small class="group-stats">248 members • 78% success</small>
                             </div>
                         </div>
-                        <p style="color: #4A5568; margin-bottom: 15px; font-size: 14px;">Exclusive group for serious bettors with high-success rate codes.</p>
-                        <div style="display: flex; gap: 8px; margin-bottom: 15px;">
-                            <span style="background: #E3F2FD; color: #1976D2; padding: 4px 8px; border-radius: 8px; font-size: 12px;">VIP</span>
-                            <span style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 8px; font-size: 12px;">High Success</span>
+                        <p class="group-description">Exclusive group for serious bettors with high-success rate codes.</p>
+                        <div class="group-tags">
+                            <span class="group-tag vip-tag">VIP</span>
+                            <span class="group-tag success-tag">High Success</span>
                         </div>
-                        <a href="https://wa.me/1234567890" target="_blank" class="btn w-100" style="background: #25D366; color: white; border: none; border-radius: 8px; padding: 10px; font-weight: bold;">
+                        <a href="https://wa.me/1234567890" target="_blank" class="btn btn-join-whatsapp w-100">
                             <i class="fab fa-whatsapp me-2"></i> JOIN NOW
                         </a>
                     </div>
@@ -1060,21 +1260,21 @@
                 
                 <div class="col-lg-4 col-md-6">
                     <div class="group-card">
-                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                            <div style="width: 40px; height: 40px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                                <i class="fas fa-futbol" style="color: white; font-size: 18px;"></i>
+                        <div class="group-card-header">
+                            <div class="icon-container whatsapp">
+                                <i class="fas fa-futbol"></i>
                             </div>
-                            <div>
-                                <h5 style="margin: 0; color: #075E54; font-weight: bold;">Football Predictions</h5>
-                                <small style="color: #666;">512 members • 82% success</small>
+                            <div class="group-info">
+                                <h5 class="group-title">Football Predictions</h5>
+                                <small class="group-stats">512 members • 82% success</small>
                             </div>
                         </div>
-                        <p style="color: #4A5568; margin-bottom: 15px; font-size: 14px;">Daily football match predictions and live betting tips.</p>
-                        <div style="display: flex; gap: 8px; margin-bottom: 15px;">
-                            <span style="background: #FFF3E0; color: #E65100; padding: 4px 8px; border-radius: 8px; font-size: 12px;">Football</span>
-                            <span style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 8px; font-size: 12px;">Daily Tips</span>
+                        <p class="group-description">Daily football match predictions and live betting tips.</p>
+                        <div class="group-tags">
+                            <span class="group-tag football-tag">Football</span>
+                            <span class="group-tag tips-tag">Daily Tips</span>
                         </div>
-                        <a href="https://wa.me/1234567891" target="_blank" class="btn w-100" style="background: #25D366; color: white; border: none; border-radius: 8px; padding: 10px; font-weight: bold;">
+                        <a href="https://wa.me/1234567891" target="_blank" class="btn btn-join-whatsapp w-100">
                             <i class="fab fa-whatsapp me-2"></i> JOIN NOW
                         </a>
                     </div>
@@ -1082,21 +1282,21 @@
                 
                 <div class="col-lg-4 col-md-6">
                     <div class="group-card">
-                        <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                            <div style="width: 40px; height: 40px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                                <i class="fas fa-trophy" style="color: white; font-size: 18px;"></i>
+                        <div class="group-card-header">
+                            <div class="icon-container whatsapp">
+                                <i class="fas fa-trophy"></i>
                             </div>
-                            <div>
-                                <h5 style="margin: 0; color: #075E54; font-weight: bold;">Multi-Sport Tips</h5>
-                                <small style="color: #666;">187 members • 75% success</small>
+                            <div class="group-info">
+                                <h5 class="group-title">Multi-Sport Tips</h5>
+                                <small class="group-stats">187 members • 75% success</small>
                             </div>
                         </div>
-                        <p style="color: #4A5568; margin-bottom: 15px; font-size: 14px;">Basketball, Tennis, Cricket and other sports predictions.</p>
-                        <div style="display: flex; gap: 8px; margin-bottom: 15px;">
-                            <span style="background: #F3E5F5; color: #7B1FA2; padding: 4px 8px; border-radius: 8px; font-size: 12px;">Multi-Sport</span>
-                            <span style="background: #E8F5E8; color: #2E7D32; padding: 4px 8px; border-radius: 8px; font-size: 12px;">All Sports</span>
+                        <p class="group-description">Basketball, Tennis, Cricket and other sports predictions.</p>
+                        <div class="group-tags">
+                            <span class="group-tag multisport-tag">Multi-Sport</span>
+                            <span class="group-tag allsports-tag">All Sports</span>
                         </div>
-                        <a href="https://wa.me/1234567892" target="_blank" class="btn w-100" style="background: #25D366; color: white; border: none; border-radius: 8px; padding: 10px; font-weight: bold;">
+                        <a href="https://wa.me/1234567892" target="_blank" class="btn btn-join-whatsapp w-100">
                             <i class="fab fa-whatsapp me-2"></i> JOIN NOW
                         </a>
                     </div>
@@ -1130,8 +1330,8 @@
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(120, 219, 226, 0.2) 0%, transparent 50%);"></div>
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+'); opacity: 0.3;"></div>
         <div class="container" style="position: relative; z-index: 1;">
-            <h2 class="text-center mb-5" style="color: #ffffff; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-size: 2.5rem;">EXCLUSIVE BETTING CODES</h2>
-            <p class="text-center mb-5" style="color: #f0f8ff; font-weight: 500; font-size: 1.1rem;">Copy these codes directly to your PariPesa account. Updated daily.</p>
+            <h2 class="text-center mb-5 exclusive-codes-title">EXCLUSIVE BETTING CODES</h2>
+            <p class="text-center mb-5 exclusive-codes-subtitle">Copy these codes directly to your PariPesa account. Updated daily.</p>
             
             <div class="row g-4" id="bettingCodes">
                 <!-- Betting codes will be loaded by JavaScript -->
@@ -1280,12 +1480,12 @@
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <a href="#whatsapp" class="whatsapp-float" style="position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; text-decoration: none; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5); z-index: 1000;">
+    <a href="#whatsapp" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="btn" style="position: fixed; bottom: 100px; right: 30px; background: linear-gradient(90deg, var(--primary-green), var(--primary-blue)); color: white; width: 50px; height: 50px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: 1.5rem; border: none; z-index: 1000;">
+    <button id="scrollToTop" class="btn">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -1410,14 +1610,22 @@
             websiteData.bettingCodes.forEach(code => {
                 const col = document.createElement('div');
                 col.className = 'col-lg-4 col-md-6';
+                
+                let sportClass = 'default';
+                if (code.sport === 'Football') {
+                    sportClass = 'football';
+                } else if (code.sport === 'Basketball') {
+                    sportClass = 'basketball';
+                }
+
                 col.innerHTML = `
                     <div class="code-card ${code.type}">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="mb-0" style="color: #1a202c; font-weight: bold; font-size: 1.2rem;">${code.code}</h4>
-                            <span class="badge" style="background: ${code.sport === 'Football' ? 'linear-gradient(135deg, #48bb78, #38a169)' : code.sport === 'Basketball' ? 'linear-gradient(135deg, #ed64a6, #d53f8c)' : 'linear-gradient(135deg, #9f7aea, #805ad5)'}; color: white; border: none; padding: 6px 12px; border-radius: 20px; font-weight: bold; font-size: 0.8rem;">${code.sport}</span>
+                            <h4 class="mb-0 code-card-code">${code.code}</h4>
+                            <span class="badge code-card-sport-badge ${sportClass}">${code.sport}</span>
                         </div>
-                        <p class="mb-3" style="color: #4a5568; font-size: 0.95rem;"><i class="fas fa-chart-line me-2" style="color: #48bb78;"></i> Odds: <strong style="color: #2d3748; font-size: 1.1rem;">${code.odds}</strong></p>
-                        <button class="btn btn-sm w-100 copy-code-btn" data-code="${code.code}" style="background: linear-gradient(135deg, #48bb78, #38a169); color: white; border: none; border-radius: 25px; padding: 10px; font-weight: bold; transition: all 0.3s ease; font-size: 0.9rem;">
+                        <p class="mb-3 code-card-odds"><i class="fas fa-chart-line me-2"></i> Odds: <strong>${code.odds}</strong></p>
+                        <button class="btn btn-sm w-100 copy-code-btn btn-copy-code" data-code="${code.code}">
                             <i class="fas fa-copy me-2"></i> COPY CODE
                         </button>
                     </div>

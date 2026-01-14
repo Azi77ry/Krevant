@@ -1646,3 +1646,74 @@ h1, h2, h3, h4, h5, h6 {
         transform: translateY(0);
     }
 }
+
+/* Welcome Popup Styles */
+#welcome-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 10002;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+#welcome-popup-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#welcome-popup {
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.5s ease;
+}
+
+#welcome-popup-overlay.visible #welcome-popup {
+    transform: scale(1);
+}
+
+#close-popup-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--text-gray);
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#close-popup-btn:hover {
+    color: var(--primary-green);
+    transform: rotate(90deg);
+}
+
+#welcome-popup .popup-content i {
+    color: var(--primary-green);
+    text-shadow: var(--shadow-glow);
+}
+
+#welcome-popup .popup-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+#welcome-popup .popup-content p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}

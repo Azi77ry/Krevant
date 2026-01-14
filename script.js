@@ -166,12 +166,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize AI chat
     initChat();
     
-    // Show welcome popup on first visit
-    if (!localStorage.getItem('paripesaVisited')) {
-        setTimeout(() => {
-            alert('🚀 WELCOME TO PARIPESA 2050!\n\nUse promo code: VANT for exclusive bonuses!');
-            localStorage.setItem('paripesaVisited', 'false');
-        }, 1000);
+    // Show welcome popup on every visit
+    const welcomePopupOverlay = document.getElementById('welcome-popup-overlay');
+    const closePopupBtn = document.getElementById('close-popup-btn');
+
+    function showWelcomePopup() {
+        welcomePopupOverlay.classList.add('visible');
+    }
+
+    function hideWelcomePopup() {
+        welcomePopupOverlay.classList.remove('visible');
+    }
+
+    if (welcomePopupOverlay && closePopupBtn) {
+        setTimeout(showWelcomePopup, 1000);
+
+        closePopupBtn.addEventListener('click', hideWelcomePopup);
+
+        welcomePopupOverlay.addEventListener('click', function(event) {
+            if (event.target === welcomePopupOverlay) {
+                hideWelcomePopup();
+            }
+        });
     }
 
     // Scroll to top button

@@ -808,7 +808,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Floating AI Button */
 .floating-ai-btn {
     position: fixed;
-    bottom: 170px;
+    bottom: 160px;
     right: 30px;
     width: 60px;
     height: 60px;
@@ -951,16 +951,22 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
     z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.7);
 }
 
 #scrollToTop {
     position: fixed;
-    bottom: 100px;
+    bottom: 95px;
     right: 30px;
     background: linear-gradient(90deg, var(--primary-green), var(--primary-blue));
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: none;
     align-items: center;
@@ -968,6 +974,13 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5rem;
     border: none;
     z-index: 1000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#scrollToTop:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
 }
 
 /* Responsive */
@@ -986,15 +999,31 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .floating-ai-btn {
-        bottom: 140px;
+        bottom: 130px;
         right: 20px;
         width: 50px;
         height: 50px;
         font-size: 20px;
     }
     
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    #scrollToTop {
+        bottom: 75px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
     .ai-chat-popup {
-        bottom: 200px;
+        bottom: 190px;
         right: 20px;
         left: 20px;
         width: auto;

@@ -81,6 +81,9 @@ const websiteData = {
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    // Sidebar Toggle Functionality
+    initSidebar();
+    
     // Load matches grid
     const matchesGrid = document.getElementById('matchesGrid');
     websiteData.matches.forEach((match, index) => {
@@ -184,7 +187,81 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Active Menu Item Based on Scroll
+    updateActiveMenuItem();
+    window.addEventListener('scroll', updateActiveMenuItem);
 });
+
+// Sidebar Toggle for Mobile
+function initSidebar() {
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const leftSidebar = document.getElementById('leftSidebar');
+    
+    if (sidebarToggle && leftSidebar) {
+        sidebarToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            leftSidebar.classList.toggle('active');
+            
+            // Change icon
+            const icon = sidebarToggle.querySelector('i');
+            if (leftSidebar.classList.contains('active')) {
+                icon.className = 'fas fa-times';
+            } else {
+                icon.className = 'fas fa-bars';
+            }
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) {
+                if (!leftSidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                    leftSidebar.classList.remove('active');
+                    const icon = sidebarToggle.querySelector('i');
+                    icon.className = 'fas fa-bars';
+                }
+            }
+        });
+
+        // Close sidebar when clicking a menu link on mobile
+        const menuLinks = document.querySelectorAll('.menu-link');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 992) {
+                    leftSidebar.classList.remove('active');
+                    const icon = sidebarToggle.querySelector('i');
+                    icon.className = 'fas fa-bars';
+                }
+            });
+        });
+    }
+}
+
+// Update Active Menu Item Based on Scroll Position
+function updateActiveMenuItem() {
+    const sections = ['home', 'register', 'whatsapp', 'matches', 'codes'];
+    const menuLinks = document.querySelectorAll('.menu-link');
+    
+    let current = 'home';
+    
+    sections.forEach(section => {
+        const element = document.getElementById(section);
+        if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= 150 && rect.bottom >= 150) {
+                current = section;
+            }
+        }
+    });
+    
+    menuLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+}
 
 // Copy promo code function
 function copyPromoCode() {

@@ -24,34 +24,99 @@
     <!-- Cyber Grid Background -->
     <div class="cyber-grid"></div>
     
-    <!-- Header & Navigation -->
-    <header class="main-header navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand logo" href="#">PARIPESA 2050</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#register">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#whatsapp">WhatsApp Groups</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#matches">Today's Matches</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#codes">Betting Codes</a>
-                    </li>
-                    <li class="nav-item notification-badge">
-                        <!-- Hot Codes Badge -->
-                    </li>
-                </ul>
+    <!-- Mobile Menu Toggle -->
+    <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Left Sidebar Navigation -->
+    <nav class="left-sidebar" id="leftSidebar">
+        <!-- Logo Section -->
+        <div class="sidebar-logo">
+            <a href="#home" class="logo-link">
+                <i class="fas fa-rocket"></i>
+                <span class="logo-text">PARIPESA<br><small>2050</small></span>
+            </a>
+        </div>
+
+        <!-- Navigation Menu -->
+        <ul class="sidebar-menu">
+            <li class="menu-item">
+                <a href="#home" class="menu-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                    <div class="link-glow"></div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#register" class="menu-link">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Register</span>
+                    <div class="link-glow"></div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#whatsapp" class="menu-link">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp Groups</span>
+                    <div class="link-glow"></div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#matches" class="menu-link">
+                    <i class="fas fa-futbol"></i>
+                    <span>Today's Matches</span>
+                    <div class="link-glow"></div>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#codes" class="menu-link hot-link">
+                    <i class="fas fa-code"></i>
+                    <span>Betting Codes</span>
+                    <span class="hot-badge">🔥 HOT</span>
+                    <div class="link-glow"></div>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Promo Code Quick Access -->
+        <div class="sidebar-promo">
+            <div class="promo-label">PROMO CODE</div>
+            <div class="promo-code-small" onclick="copyPromoCode()">
+                <span>VANT</span>
+                <i class="fas fa-copy"></i>
             </div>
         </div>
-    </header>
+
+        <!-- Stats Mini Widget -->
+        <div class="sidebar-stats">
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <div>
+                    <div class="stat-value">12K+</div>
+                    <div class="stat-label">Users</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-trophy"></i>
+                <div>
+                    <div class="stat-value">85%</div>
+                    <div class="stat-label">Success</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+            <a href="https://paripesa.com" target="_blank" class="sidebar-cta">
+                <i class="fas fa-external-link-alt me-2"></i>
+                <span>Visit PariPesa</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-content">
 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
@@ -428,6 +493,9 @@
     <button id="scrollToTop" class="btn">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    </div>
+    <!-- End Main Content Wrapper -->
 
     <!-- Bootstrap & JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

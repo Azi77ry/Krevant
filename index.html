@@ -44,44 +44,50 @@
             <li class="menu-item">
                 <a href="#home" class="menu-link active">
                     <i class="fas fa-home"></i>
-                    <span>Home</span>
+                    <span data-lang="home">Home</span>
                     <div class="link-glow"></div>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="#register" class="menu-link">
                     <i class="fas fa-user-plus"></i>
-                    <span>Register</span>
+                    <span data-lang="register">Register</span>
                     <div class="link-glow"></div>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="#whatsapp" class="menu-link">
                     <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp Groups</span>
+                    <span data-lang="whatsapp_groups">WhatsApp Groups</span>
                     <div class="link-glow"></div>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="#matches" class="menu-link">
                     <i class="fas fa-futbol"></i>
-                    <span>Today's Matches</span>
+                    <span data-lang="todays_matches">Today's Matches</span>
                     <div class="link-glow"></div>
                 </a>
             </li>
             <li class="menu-item">
                 <a href="#codes" class="menu-link hot-link">
                     <i class="fas fa-code"></i>
-                    <span>Betting Codes</span>
+                    <span data-lang="betting_codes">Betting Codes</span>
                     <span class="hot-badge">🔥 HOT</span>
                     <div class="link-glow"></div>
                 </a>
             </li>
         </ul>
 
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang-switch="en">EN</button>
+            <button class="lang-btn" data-lang-switch="sw">SW</button>
+        </div>
+
         <!-- Promo Code Quick Access -->
         <div class="sidebar-promo">
-            <div class="promo-label">PROMO CODE</div>
+            <div class="promo-label" data-lang="promo_code">PROMO CODE</div>
             <div class="promo-code-small" onclick="copyPromoCode()">
                 <span>VANT</span>
                 <i class="fas fa-copy"></i>
@@ -94,14 +100,14 @@
                 <i class="fas fa-users"></i>
                 <div>
                     <div class="stat-value">12K+</div>
-                    <div class="stat-label">Users</div>
+                    <div class="stat-label" data-lang="users">Users</div>
                 </div>
             </div>
             <div class="stat-item">
                 <i class="fas fa-trophy"></i>
                 <div>
                     <div class="stat-value">85%</div>
-                    <div class="stat-label">Success</div>
+                    <div class="stat-label" data-lang="success">Success</div>
                 </div>
             </div>
         </div>
@@ -110,7 +116,7 @@
         <div class="sidebar-footer">
             <a href="https://paripesa.com" target="_blank" class="sidebar-cta">
                 <i class="fas fa-external-link-alt me-2"></i>
-                <span>Visit PariPesa</span>
+                <span data-lang="visit_paripesa">Visit PariPesa</span>
             </a>
         </div>
     </nav>
@@ -124,25 +130,25 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-3 fw-bold mb-4 neon-text" style="color: var(--primary-green);">REGISTER NOW & WIN BIG WITH <span class="rgb-gradient">PARIPESA</span></h1>
-                    <p class="lead mb-4" style="color: var(--text-gray);">Experience the future of sports promotions. Join thousands of winners using our exclusive promo code.</p>
+                    <h1 class="display-3 fw-bold mb-4 neon-text" style="color: var(--primary-green);" data-lang="hero_title">REGISTER NOW & WIN BIG WITH <span class="rgb-gradient">PARIPESA</span></h1>
+                    <p class="lead mb-4" style="color: var(--text-gray);" data-lang="hero_subtitle">Experience the future of sports promotions. Join thousands of winners using our exclusive promo code.</p>
                     
                     <!-- Promo Code -->
                     <div class="my-5">
-                        <h3 class="mb-3">EXCLUSIVE PROMO CODE:</h3>
+                        <h3 class="mb-3" data-lang="exclusive_promo_code">EXCLUSIVE PROMO CODE:</h3>
                         <div class="promo-code pulse-glow" id="promoCode">VANT</div>
                         <button class="btn btn-lg mt-3" style="background: linear-gradient(90deg, var(--primary-green), var(--primary-blue)); color: white; border: none;" onclick="copyPromoCode()">
-                            <i class="fas fa-copy me-2"></i> COPY CODE
+                            <i class="fas fa-copy me-2"></i> <span data-lang="copy_code">COPY CODE</span>
                         </button>
                     </div>
                     
                     <!-- CTA Buttons -->
                     <div class="d-flex flex-wrap gap-3 mt-5">
                         <a href="https://paripesa.com" target="_blank" class="btn btn-lg px-5 py-3 glass-card neon-border" style="color: white; font-weight: bold;">
-                            <i class="fas fa-user-plus me-2"></i> REGISTER ON PARIPESA
+                            <i class="fas fa-user-plus me-2"></i> <span data-lang="register_on_paripesa">REGISTER ON PARIPESA</span>
                         </a>
                         <a href="#whatsapp" class="btn btn-lg px-5 py-3 glass-card neon-border" style="background: linear-gradient(90deg, #25D366, #128C7E); color: white; font-weight: bold;">
-                            <i class="fab fa-whatsapp me-2"></i> JOIN WHATSAPP GROUPS
+                            <i class="fab fa-whatsapp me-2"></i> <span data-lang="join_whatsapp_groups_cta">JOIN WHATSAPP GROUPS</span>
                         </a>
                     </div>
                 </div>
@@ -154,30 +160,30 @@
                             <div class="glass-card p-4">
                                 <i class="fas fa-users fa-3x mb-3" style="color: var(--primary-green);"></i>
                                 <div class="counter" data-count="12483">0</div>
-                                <p class="mt-2">Users Joined</p>
+                                <p class="mt-2" data-lang="users_joined">Users Joined</p>
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
                             <div class="glass-card p-4">
                                 <i class="fas fa-trophy fa-3x mb-3" style="color: var(--neon-cyan);"></i>
                                 <div class="counter" data-count="8921">0</div>
-                                <p class="mt-2">Winning Codes Shared</p>
+                                <p class="mt-2" data-lang="winning_codes_shared">Winning Codes Shared</p>
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
                             <div class="glass-card p-4">
                                 <i class="fas fa-bolt fa-3x mb-3" style="color: var(--neon-purple);"></i>
                                 <div class="counter" data-count="3567">0</div>
-                                <p class="mt-2">Active Members</p>
+                                <p class="mt-2" data-lang="active_members">Active Members</p>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Trust Badges -->
                     <div class="glass-card p-4 mt-4">
-                        <p class="mb-3"><i class="fas fa-shield-alt me-2" style="color: var(--primary-green);"></i> Secure & Trusted Platform</p>
-                        <p class="mb-3"><i class="fas fa-clock me-2" style="color: var(--primary-green);"></i> 24/7 Support Available</p>
-                        <p class="mb-0"><i class="fas fa-gift me-2" style="color: var(--primary-green);"></i> Exclusive Bonuses for New Users</p>
+                        <p class="mb-3"><i class="fas fa-shield-alt me-2" style="color: var(--primary-green);"></i> <span data-lang="secure_platform">Secure & Trusted Platform</span></p>
+                        <p class="mb-3"><i class="fas fa-clock me-2" style="color: var(--primary-green);"></i> <span data-lang="support_available">24/7 Support Available</span></p>
+                        <p class="mb-0"><i class="fas fa-gift me-2" style="color: var(--primary-green);"></i> <span data-lang="exclusive_bonuses">Exclusive Bonuses for New Users</span></p>
                     </div>
                 </div>
             </div>
@@ -187,16 +193,16 @@
     <!-- How to Register -->
     <section class="py-5" id="register">
         <div class="container">
-            <h2 class="text-center mb-5 neon-text" style="color: var(--primary-green);">HOW TO REGISTER & START WINNING</h2>
+            <h2 class="text-center mb-5 neon-text" style="color: var(--primary-green);" data-lang="how_to_register_title">HOW TO REGISTER & START WINNING</h2>
             
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
                     <div class="step-card glass-card">
                         <div class="step-number">1</div>
                         <i class="fas fa-globe fa-3x mb-4" style="color: var(--primary-blue);"></i>
-                        <h4 class="mb-3">Visit PariPesa</h4>
-                        <p>Go to the official PariPesa website or use our direct link.</p>
-                        <a href="https://paripesa.com" target="_blank" class="btn btn-sm mt-3" style="background: var(--primary-blue); color: white;">GO TO SITE</a>
+                        <h4 class="mb-3" data-lang="step1_title">Visit PariPesa</h4>
+                        <p data-lang="step1_desc">Go to the official PariPesa website or use our direct link.</p>
+                        <a href="https://paripesa.com" target="_blank" class="btn btn-sm mt-3" style="background: var(--primary-blue); color: white;" data-lang="go_to_site">GO TO SITE</a>
                     </div>
                 </div>
                 
@@ -204,9 +210,9 @@
                     <div class="step-card glass-card">
                         <div class="step-number">2</div>
                         <i class="fas fa-user-plus fa-3x mb-4" style="color: var(--primary-green);"></i>
-                        <h4 class="mb-3">Create Account</h4>
-                        <p>Fill in your details and create your free account in under 2 minutes.</p>
-                        <button class="btn btn-sm mt-3" style="background: var(--primary-green); color: white;" onclick="copyPromoCode()">COPY PROMO CODE: VANT</button>
+                        <h4 class="mb-3" data-lang="step2_title">Create Account</h4>
+                        <p data-lang="step2_desc">Fill in your details and create your free account in under 2 minutes.</p>
+                        <button class="btn btn-sm mt-3" style="background: var(--primary-green); color: white;" onclick="copyPromoCode()"><span data-lang="copy_promo_code_vant">COPY PROMO CODE: VANT</span></button>
                     </div>
                 </div>
                 
@@ -214,9 +220,9 @@
                     <div class="step-card glass-card">
                         <div class="step-number">3</div>
                         <i class="fas fa-tag fa-3x mb-4" style="color: var(--neon-cyan);"></i>
-                        <h4 class="mb-3">Enter Promo Code</h4>
-                        <p>During registration, enter the promo code <strong>VANT</strong> to unlock bonuses.</p>
-                        <button class="btn btn-sm mt-3" style="background: var(--neon-cyan); color: #0a0e17;" onclick="copyPromoCode()">COPY CODE VANT</button>
+                        <h4 class="mb-3" data-lang="step3_title">Enter Promo Code</h4>
+                        <p data-lang="step3_desc">During registration, enter the promo code <strong>VANT</strong> to unlock bonuses.</p>
+                        <button class="btn btn-sm mt-3" style="background: var(--neon-cyan); color: #0a0e17;" onclick="copyPromoCode()"><span data-lang="copy_code_vant">COPY CODE VANT</span></button>
                     </div>
                 </div>
                 
@@ -224,9 +230,9 @@
                     <div class="step-card glass-card">
                         <div class="step-number">4</div>
                         <i class="fab fa-whatsapp fa-3x mb-4" style="color: #25D366;"></i>
-                        <h4 class="mb-3">Join WhatsApp Groups</h4>
-                        <p>Get daily winning codes and tips by joining our exclusive WhatsApp groups.</p>
-                        <a href="#whatsapp" class="btn btn-sm mt-3" style="background: #25D366; color: white;">JOIN GROUPS</a>
+                        <h4 class="mb-3" data-lang="step4_title">Join WhatsApp Groups</h4>
+                        <p data-lang="step4_desc">Get daily winning codes and tips by joining our exclusive WhatsApp groups.</p>
+                        <a href="#whatsapp" class="btn btn-sm mt-3" style="background: #25D366; color: white;" data-lang="join_groups_cta">JOIN GROUPS</a>
                     </div>
                 </div>
             </div>
@@ -237,8 +243,8 @@
     <section class="py-5" id="whatsapp" style="background: linear-gradient(135deg, #E5DDD5 0%, #DCF8C6 100%); position: relative;">
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Ctext%20fill=%22%23000000%22%20fill-opacity=%220.03%22%20font-size=%2220%22%20y=%2250%25%22%3E💬%3C/text%3E%3C/svg%3E'); background-repeat: repeat; opacity: 0.1;"></div>
         <div class="container" style="position: relative; z-index: 1;">
-            <h2 class="text-center mb-5" style="color: #075E54; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">WHATSAPP BETTING GROUPS</h2>
-            <p class="text-center mb-5" style="color: #4A5568; font-weight: 500;">Join our active communities for daily winning codes, expert tips, and live match discussions.</p>
+            <h2 class="text-center mb-5" style="color: #075E54; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);" data-lang="whatsapp_groups_title">WHATSAPP BETTING GROUPS</h2>
+            <p class="text-center mb-5" style="color: #4A5568; font-weight: 500;" data-lang="whatsapp_groups_subtitle">Join our active communities for daily winning codes, expert tips, and live match discussions.</p>
             
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
@@ -248,17 +254,17 @@
                                 <i class="fab fa-whatsapp"></i>
                             </div>
                             <div class="group-info">
-                                <h5 class="group-title">VIP Winners Group</h5>
-                                <small class="group-stats">248 members • 78% success</small>
+                                <h5 class="group-title" data-lang="vip_winners_group">VIP Winners Group</h5>
+                                <small class="group-stats" data-lang="vip_group_stats">248 members • 78% success</small>
                             </div>
                         </div>
-                        <p class="group-description">Exclusive group for serious bettors with high-success rate codes.</p>
+                        <p class="group-description" data-lang="vip_group_desc">Exclusive group for serious bettors with high-success rate codes.</p>
                         <div class="group-tags">
                             <span class="group-tag vip-tag">VIP</span>
-                            <span class="group-tag success-tag">High Success</span>
+                            <span class="group-tag success-tag" data-lang="high_success">High Success</span>
                         </div>
                         <a href="https://wa.me/1234567890" target="_blank" class="btn btn-join-whatsapp w-100">
-                            <i class="fab fa-whatsapp me-2"></i> JOIN NOW
+                            <i class="fab fa-whatsapp me-2"></i> <span data-lang="join_now">JOIN NOW</span>
                         </a>
                     </div>
                 </div>
@@ -270,17 +276,17 @@
                                 <i class="fas fa-futbol"></i>
                             </div>
                             <div class="group-info">
-                                <h5 class="group-title">Football Predictions</h5>
-                                <small class="group-stats">512 members • 82% success</small>
+                                <h5 class="group-title" data-lang="football_predictions_group">Football Predictions</h5>
+                                <small class="group-stats" data-lang="football_group_stats">512 members • 82% success</small>
                             </div>
                         </div>
-                        <p class="group-description">Daily football match predictions and live betting tips.</p>
+                        <p class="group-description" data-lang="football_group_desc">Daily football match predictions and live betting tips.</p>
                         <div class="group-tags">
-                            <span class="group-tag football-tag">Football</span>
-                            <span class="group-tag tips-tag">Daily Tips</span>
+                            <span class="group-tag football-tag" data-lang="football">Football</span>
+                            <span class="group-tag tips-tag" data-lang="daily_tips">Daily Tips</span>
                         </div>
                         <a href="https://wa.me/1234567891" target="_blank" class="btn btn-join-whatsapp w-100">
-                            <i class="fab fa-whatsapp me-2"></i> JOIN NOW
+                            <i class="fab fa-whatsapp me-2"></i> <span data-lang="join_now">JOIN NOW</span>
                         </a>
                     </div>
                 </div>
@@ -292,17 +298,17 @@
                                 <i class="fas fa-trophy"></i>
                             </div>
                             <div class="group-info">
-                                <h5 class="group-title">Multi-Sport Tips</h5>
-                                <small class="group-stats">187 members • 75% success</small>
+                                <h5 class="group-title" data-lang="multisport_tips_group">Multi-Sport Tips</h5>
+                                <small class="group-stats" data-lang="multisport_group_stats">187 members • 75% success</small>
                             </div>
                         </div>
-                        <p class="group-description">Basketball, Tennis, Cricket and other sports predictions.</p>
+                        <p class="group-description" data-lang="multisport_group_desc">Basketball, Tennis, Cricket and other sports predictions.</p>
                         <div class="group-tags">
-                            <span class="group-tag multisport-tag">Multi-Sport</span>
-                            <span class="group-tag allsports-tag">All Sports</span>
+                            <span class="group-tag multisport-tag" data-lang="multisport">Multi-Sport</span>
+                            <span class="group-tag allsports-tag" data-lang="all_sports">All Sports</span>
                         </div>
                         <a href="https://wa.me/1234567892" target="_blank" class="btn btn-join-whatsapp w-100">
-                            <i class="fab fa-whatsapp me-2"></i> JOIN NOW
+                            <i class="fab fa-whatsapp me-2"></i> <span data-lang="join_now">JOIN NOW</span>
                         </a>
                     </div>
                 </div>
@@ -320,8 +326,8 @@
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMS41IiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz48L3N2Zz4='); background-size: 100px 100px; opacity: 0.3;"></div>
         <div class="container" style="position: relative; z-index: 1;">
             <div class="text-center mb-5">
-                <h2 class="matches-title">TODAY'S HOT MATCHES</h2>
-                <p class="matches-subtitle">Expert predictions for today's most exciting matches</p>
+                <h2 class="matches-title" data-lang="todays_hot_matches">TODAY'S HOT MATCHES</h2>
+                <p class="matches-subtitle" data-lang="todays_matches_subtitle">Expert predictions for today's most exciting matches</p>
             </div>
 
             <div class="matches-grid" id="matchesGrid">
@@ -335,8 +341,8 @@
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(120, 219, 226, 0.2) 0%, transparent 50%);"></div>
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+'); opacity: 0.3;"></div>
         <div class="container" style="position: relative; z-index: 1;">
-            <h2 class="text-center mb-5 exclusive-codes-title">EXCLUSIVE BETTING CODES</h2>
-            <p class="text-center mb-5 exclusive-codes-subtitle">Copy these codes directly to your PariPesa account. Updated daily.</p>
+            <h2 class="text-center mb-5 exclusive-codes-title" data-lang="exclusive_betting_codes">EXCLUSIVE BETTING CODES</h2>
+            <p class="text-center mb-5 exclusive-codes-subtitle" data-lang="exclusive_codes_subtitle">Copy these codes directly to your PariPesa account. Updated daily.</p>
             
             <div class="row g-4" id="bettingCodes">
                 <!-- Betting codes will be loaded by JavaScript -->
@@ -347,32 +353,32 @@
     <!-- AI Chat Popup -->
     <div class="ai-chat-popup" id="aiChatPopup">
         <div class="ai-chat-header">
-            <h5><i class="fas fa-robot me-2"></i>AI Assistant</h5>
+            <h5><i class="fas fa-robot me-2"></i><span data-lang="ai_assistant">AI Assistant</span></h5>
             <button class="ai-chat-close" id="closeChatBtn">&times;</button>
         </div>
         <div class="ai-chat-body">
             <div class="ai-chat-messages" id="chatMessages">
                 <div class="message ai-message">
-                    <p>Hello! I'm your PariPesa Assistant. How can I help you today?</p>
-                    <p>Try asking:</p>
+                    <p data-lang="ai_welcome_message">Hello! I'm your PariPesa Assistant. How can I help you today?</p>
+                    <p data-lang="ai_try_asking">Try asking:</p>
                     <ul>
-                        <li>How do I register on PariPesa?</li>
-                        <li>What is the promo code?</li>
-                        <li>How do I join WhatsApp groups?</li>
+                        <li data-lang="ai_question1">How do I register on PariPesa?</li>
+                        <li data-lang="ai_question2">What is the promo code?</li>
+                        <li data-lang="ai_question3">How do I join WhatsApp groups?</li>
                     </ul>
                 </div>
             </div>
             <div class="ai-chat-input-area">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="userInput" placeholder="Type your question..." style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(0, 255, 136, 0.3); color: white;">
+                    <input type="text" class="form-control" id="userInput" placeholder="Type your question..." style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(0, 255, 136, 0.3); color: white;" data-lang-placeholder="type_question">
                     <button class="btn" id="sendBtn" style="background: linear-gradient(90deg, var(--neon-cyan), var(--primary-blue)); color: white;">
                         <i class="fas fa-paper-plane"></i>
                     </button>
                 </div>
                 <div class="d-flex flex-wrap gap-1">
-                    <button class="btn btn-sm quick-question" style="background: rgba(0, 255, 136, 0.2); color: var(--primary-green);">How to register?</button>
-                    <button class="btn btn-sm quick-question" style="background: rgba(0, 102, 255, 0.2); color: var(--primary-blue);">Promo code?</button>
-                    <button class="btn btn-sm quick-question" style="background: rgba(185, 103, 255, 0.2); color: var(--neon-purple);">WhatsApp groups?</button>
+                    <button class="btn btn-sm quick-question" style="background: rgba(0, 255, 136, 0.2); color: var(--primary-green);" data-lang="quick_question_register">How to register?</button>
+                    <button class="btn btn-sm quick-question" style="background: rgba(0, 102, 255, 0.2); color: var(--primary-blue);" data-lang="quick_question_promo">Promo code?</button>
+                    <button class="btn btn-sm quick-question" style="background: rgba(185, 103, 255, 0.2); color: var(--neon-purple);" data-lang="quick_question_whatsapp">WhatsApp groups?</button>
                 </div>
             </div>
         </div>
@@ -389,7 +395,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <h3 class="logo mb-3">PARIPESA 2050</h3>
-                    <p style="color: var(--text-gray);">The future of sports promotions. Exclusive bonuses, winning codes, and expert communities.</p>
+                    <p style="color: var(--text-gray);" data-lang="footer_desc">The future of sports promotions. Exclusive bonuses, winning codes, and expert communities.</p>
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="text-decoration-none" style="color: var(--primary-green);"><i class="fab fa-whatsapp fa-2x"></i></a>
                         <a href="#" class="text-decoration-none" style="color: var(--primary-blue);"><i class="fab fa-telegram fa-2x"></i></a>
@@ -398,32 +404,32 @@
                 </div>
                 
                 <div class="col-lg-2 col-md-6 mb-4">
-                    <h5 class="mb-3" style="color: var(--primary-green);">Quick Links</h5>
+                    <h5 class="mb-3" style="color: var(--primary-green);" data-lang="quick_links">Quick Links</h5>
                     <div class="footer-links">
-                        <a href="#register">How to Register</a>
-                        <a href="#whatsapp">WhatsApp Groups</a>
-                        <a href="#matches">Today's Matches</a>
-                        <a href="#codes">Betting Codes</a>
+                        <a href="#register" data-lang="how_to_register_link">How to Register</a>
+                        <a href="#whatsapp" data-lang="whatsapp_groups_link">WhatsApp Groups</a>
+                        <a href="#matches" data-lang="todays_matches_link">Today's Matches</a>
+                        <a href="#codes" data-lang="betting_codes_link">Betting Codes</a>
                     </div>
                 </div>
                 
                 <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="mb-3" style="color: var(--primary-green);">Important</h5>
+                    <h5 class="mb-3" style="color: var(--primary-green);" data-lang="important">Important</h5>
                     <div class="footer-links">
-                        <a href="https://paripesa.com" target="_blank">Official PariPesa Site</a>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimerModal">Responsible Betting</a>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#legalModal">Legal Notice</a>
+                        <a href="https://paripesa.com" target="_blank" data-lang="official_site">Official PariPesa Site</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimerModal" data-lang="responsible_betting">Responsible Betting</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#legalModal" data-lang="legal_notice">Legal Notice</a>
                     </div>
                 </div>
                 
                 <div class="col-lg-3 mb-4">
-                    <h5 class="mb-3" style="color: var(--primary-green);">Contact</h5>
+                    <h5 class="mb-3" style="color: var(--primary-green);" data-lang="contact">Contact</h5>
                     <p style="color: var(--text-gray);">
-                        <i class="fab fa-whatsapp me-2"></i> WhatsApp Support<br>
-                        <small>Available 24/7</small>
+                        <i class="fab fa-whatsapp me-2"></i> <span data-lang="whatsapp_support">WhatsApp Support</span><br>
+                        <small data-lang="available_24_7">Available 24/7</small>
                     </p>
                     <a href="https://wa.me/1234567890" target="_blank" class="btn btn-sm" style="background: #25D366; color: white;">
-                        <i class="fab fa-whatsapp me-2"></i> Message Us
+                        <i class="fab fa-whatsapp me-2"></i> <span data-lang="message_us">Message Us</span>
                     </a>
                 </div>
             </div>
@@ -432,11 +438,11 @@
             
             <div class="row mt-4">
                 <div class="col-md-6">
-                    <p style="color: var(--text-gray);">© 2050 PariPesa Promotions. This is a promotional website only.</p>
+                    <p style="color: var(--text-gray);" data-lang="footer_copyright">© 2050 PariPesa Promotions. This is a promotional website only.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <p style="color: var(--text-gray);">
-                        <strong>Promo Code:</strong> 
+                        <strong data-lang="promo_code_footer">Promo Code:</strong> 
                         <span class="promo-code-small" style="color: var(--primary-green); font-weight: bold;">VANT</span>
                     </p>
                 </div>
@@ -449,19 +455,19 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content glass-card" style="background: var(--darker-bg); color: white;">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title" style="color: var(--primary-green);">Responsible Betting</h5>
+                    <h5 class="modal-title" style="color: var(--primary-green);" data-lang="responsible_betting_modal_title">Responsible Betting</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p>This is a promotional website only. We do not accept bets or process payments.</p>
-                    <p>Always gamble responsibly:</p>
+                    <p data-lang="responsible_betting_modal_p1">This is a promotional website only. We do not accept bets or process payments.</p>
+                    <p data-lang="responsible_betting_modal_p2">Always gamble responsibly:</p>
                     <ul>
-                        <li>Only bet what you can afford to lose</li>
-                        <li>Never chase losses</li>
-                        <li>Set deposit limits</li>
-                        <li>Take regular breaks</li>
+                        <li data-lang="responsible_betting_modal_li1">Only bet what you can afford to lose</li>
+                        <li data-lang="responsible_betting_modal_li2">Never chase losses</li>
+                        <li data-lang="responsible_betting_modal_li3">Set deposit limits</li>
+                        <li data-lang="responsible_betting_modal_li4">Take regular breaks</li>
                     </ul>
-                    <p>If you need help with problem gambling, contact professional support services.</p>
+                    <p data-lang="responsible_betting_modal_p3">If you need help with problem gambling, contact professional support services.</p>
                 </div>
             </div>
         </div>
@@ -471,14 +477,14 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content glass-card" style="background: var(--darker-bg); color: white;">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title" style="color: var(--primary-green);">Legal Notice</h5>
+                    <h5 class="modal-title" style="color: var(--primary-green);" data-lang="legal_notice_modal_title">Legal Notice</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p>This website is for promotional purposes only. All betting activities must be conducted through the official PariPesa platform.</p>
-                    <p>Users must be 18+ and comply with local gambling laws in their jurisdiction.</p>
-                    <p>We are not affiliated with PariPesa; we are an independent promotional agent.</p>
-                    <p>All predictions and codes are for informational purposes only. Past performance does not guarantee future results.</p>
+                    <p data-lang="legal_notice_modal_p1">This website is for promotional purposes only. All betting activities must be conducted through the official PariPesa platform.</p>
+                    <p data-lang="legal_notice_modal_p2">Users must be 18+ and comply with local gambling laws in their jurisdiction.</p>
+                    <p data-lang="legal_notice_modal_p3">We are not affiliated with PariPesa; we are an independent promotional agent.</p>
+                    <p data-lang="legal_notice_modal_p4">All predictions and codes are for informational purposes only. Past performance does not guarantee future results.</p>
                 </div>
             </div>
         </div>
@@ -503,10 +509,18 @@
             <button id="close-popup-btn">&times;</button>
             <div class="popup-content">
                 <i class="fas fa-rocket fa-3x mb-3"></i>
-                <h2 class="rgb-gradient">WELCOME TO PARIPESA 2050</h2>
-                <p>Use promo code <strong class="neon-text" style="color: var(--primary-green);">VANT</strong> for exclusive bonuses!</p>
-                <a href="https://paripesa.com" target="_blank" class="btn btn-lg" style="background: linear-gradient(90deg, var(--primary-green), var(--primary-blue)); color: white; border: none;">
-                    <i class="fas fa-user-plus me-2"></i> REGISTER NOW
+                <h2 class="rgb-gradient" data-lang="welcome_popup_title">WELCOME TO PARIPESA 2050</h2>
+                <p data-lang="welcome_popup_subtitle">Use promo code <strong class="neon-text" style="color: var(--primary-green);">VANT</strong> for exclusive bonuses!</p>
+                
+                <p data-lang="choose_language">Choose your language:</p>
+                <!-- Language Switcher in Popup -->
+                <div class="language-switcher-popup">
+                    <button class="lang-btn active" data-lang-switch="en">EN</button>
+                    <button class="lang-btn" data-lang-switch="sw">SW</button>
+                </div>
+
+                <a href="#home" id="welcome-button" class="btn btn-lg" style="background: linear-gradient(90deg, var(--primary-green), var(--primary-blue)); color: white; border: none;">
+                    <i class="fas fa-hand-holding-heart me-2"></i> <span data-lang="your_welcome">YOUR WELCOME</span>
                 </a>
             </div>
         </div>
@@ -515,6 +529,9 @@
     <!-- Bootstrap & JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
+    <!-- Language Data -->
+    <script src="languages.js"></script>
+
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>

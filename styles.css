@@ -1717,3 +1717,54 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.1rem;
     margin-bottom: 30px;
 }
+
+/* Language Switcher Styles */
+.language-switcher {
+    text-align: center;
+    padding: 10px 20px;
+    border-top: 1px solid rgba(0, 255, 136, 0.2);
+    border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.lang-btn {
+    background: none;
+    border: 1px solid var(--text-gray);
+    color: var(--text-gray);
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: var(--primary-green);
+    color: var(--dark-bg);
+    border-color: var(--primary-green);
+}
+
+.lang-btn.active {
+    background: var(--primary-green);
+    color: var(--dark-bg);
+    border-color: var(--primary-green);
+    box-shadow: var(--shadow-glow);
+}
+
+.language-switcher-popup {
+    margin: 30px 0;
+    padding: 20px;
+    border-top: 1px solid rgba(0, 255, 136, 0.2);
+    border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.language-switcher-popup p {
+    margin-bottom: 15px !important;
+    font-size: 1rem !important;
+    color: var(--primary-green) !important;
+}
+
+.language-switcher-popup .lang-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+}

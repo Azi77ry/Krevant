@@ -81,6 +81,53 @@ const websiteData = {
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
+    // Language Switching Functionality
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const translatableElements = document.querySelectorAll('[data-lang]');
+    const placeholderElements = document.querySelectorAll('[data-lang-placeholder]');
+
+    const changeLanguage = (lang) => {
+        // Set active button
+        langButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-lang-switch') === lang) {
+                btn.classList.add('active');
+            }
+        });
+
+        // Translate elements
+        translatableElements.forEach(el => {
+            const key = el.getAttribute('data-lang');
+            if (languageStrings[lang] && languageStrings[lang][key]) {
+                el.innerHTML = languageStrings[lang][key];
+            }
+        });
+
+        // Translate placeholders
+        placeholderElements.forEach(el => {
+            const key = el.getAttribute('data-lang-placeholder');
+            if (languageStrings[lang] && languageStrings[lang][key]) {
+                el.placeholder = languageStrings[lang][key];
+            }
+        });
+
+
+        // Store language preference
+        localStorage.setItem('preferredLanguage', lang);
+    };
+
+    // Set initial language
+    const preferredLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    changeLanguage(preferredLanguage);
+
+    // Add event listeners
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang-switch');
+            changeLanguage(lang);
+        });
+    });
+
     // Sidebar Toggle Functionality
     initSidebar();
     
@@ -169,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show welcome popup on every visit
     const welcomePopupOverlay = document.getElementById('welcome-popup-overlay');
     const closePopupBtn = document.getElementById('close-popup-btn');
+    const welcomeBtn = document.getElementById('welcome-button');
 
     function showWelcomePopup() {
         welcomePopupOverlay.classList.add('visible');
@@ -178,10 +226,11 @@ document.addEventListener('DOMContentLoaded', function() {
         welcomePopupOverlay.classList.remove('visible');
     }
 
-    if (welcomePopupOverlay && closePopupBtn) {
+    if (welcomePopupOverlay && closePopupBtn && welcomeBtn) {
         setTimeout(showWelcomePopup, 1000);
 
         closePopupBtn.addEventListener('click', hideWelcomePopup);
+        welcomeBtn.addEventListener('click', hideWelcomePopup);
 
         welcomePopupOverlay.addEventListener('click', function(event) {
             if (event.target === welcomePopupOverlay) {

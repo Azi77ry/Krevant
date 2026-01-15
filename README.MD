@@ -1,6 +1,6 @@
-# 🎯 PariPesa 2050 — Sports Promo Web 🌐
+# 🎯 Krevant tips — Sports Promo Web 🌐
 
-🔥 **PariPesa 2050** is a modern promotional website designed to help sports bettors get  
+🔥 **Krevant tips** is a modern promotional website designed to help sports bettors get  
 exclusive promo codes, join WhatsApp prediction groups, view daily match insights,  
 and get betting tips — all in a sleek, interactive UI!
 
@@ -30,8 +30,4 @@ and get betting tips — all in a sleek, interactive UI!
 
 ## 🚀 Quick Start
 
-### 📥 1. Clone Repo
 
-```bash
-git clone https://github.com/yourusername/paripesa2050.git
-cd paripesa2050

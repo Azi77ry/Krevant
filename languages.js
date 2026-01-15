@@ -79,7 +79,7 @@ const languageStrings = {
         whatsapp_support: "WhatsApp Support",
         available_24_7: "Available 24/7",
         message_us: "Message Us",
-        footer_copyright: "© 2050 PariPesa Promotions. This is a promotional website only.",
+        footer_copyright: "© 2050 KREVANT TIPS Promotions. This is a promotional website only.",
         promo_code_footer: "Promo Code:",
         responsible_betting_modal_title: "Responsible Betting",
         responsible_betting_modal_p1: "This is a promotional website only. We do not accept bets or process payments.",
@@ -194,7 +194,7 @@ const languageStrings = {
         legal_notice_modal_p2: "Watumiaji lazima wawe na umri wa miaka 18+ na kuzingatia sheria za kamari za eneo lao.",
         legal_notice_modal_p3: "Hatuna uhusiano na PariPesa; sisi ni wakala huru wa uendelezaji.",
         legal_notice_modal_p4: "Utabiri wote na nambari ni kwa madhumuni ya habari tu. Utendaji wa zamani hauhakikishi matokeo ya baadaye.",
-        welcome_popup_title: "KARIBU PARIPESA 2050",
+        welcome_popup_title: "KARIBU KREVANT TIPS",
         welcome_popup_subtitle: "Tumia nambari ya promo <strong class='neon-text' style='color: var(--primary-green);'>VANT</strong> kwa bonasi za kipekee!",
         choose_language: "Chagua lugha yako:",
         your_welcome: "KARIBU"

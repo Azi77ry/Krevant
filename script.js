@@ -256,6 +256,42 @@ document.addEventListener('DOMContentLoaded', function() {
     // Active Menu Item Based on Scroll
     updateActiveMenuItem();
     window.addEventListener('scroll', updateActiveMenuItem);
+
+    // Image Slider
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    if (slider && slides.length > 0) {
+        let currentIndex = 0;
+        const slideCount = slides.length;
+        const slideWidth = slides[0].clientWidth;
+
+        function goToSlide(index) {
+            if (index < 0) {
+                currentIndex = slideCount - 1;
+            } else if (index >= slideCount) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            goToSlide(currentIndex + 1);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            goToSlide(currentIndex - 1);
+        });
+
+        // Auto-slide
+        setInterval(() => {
+            goToSlide(currentIndex + 1);
+        }, 5000);
+    }
 });
 
 // Sidebar Toggle for Mobile

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krevant Tips - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #00ff88;
+            --primary-blue: #0066ff;
+            --dark-bg: #0a0e17;
+            --darker-bg: #06090f;
+            --text-gray: #aab2c7;
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Exo 2', sans-serif;
+        }
+        .cyber-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(var(--primary-green) 1px, transparent 1px), linear-gradient(to right, var(--primary-green) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        .glass-card {
+            background: rgba(10, 14, 23, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+        }
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            color: white;
+        }
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: var(--primary-green);
+            box-shadow: 0 0 10px var(--primary-green);
+            color: white;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-blue));
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+        }
+        #login-section .card-body {
+            padding: 40px;
+        }
+        .card-title {
+            color: var(--primary-green);
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-grid"></div>
+
+    <div id="login-section" class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card glass-card col-md-6 col-lg-4">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4"><i class="fas fa-user-shield me-2"></i>Admin Login</h3>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                </div>
+                <button type="button" class="btn btn-primary w-100" onclick="login()">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-panel" class="container py-5 d-none">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="neon-text" style="color: var(--primary-green);">
+                <i class="fas fa-cogs me-2"></i>Admin Panel
+            </h1>
+            <button class="btn btn-sm btn-danger" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</button>
+        </div>
+        
+        <div class="card glass-card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">🔥 Today's Hot Matches</h2>
+                <div id="matches-container"></div>
+                <button class="btn btn-primary mt-3" onclick="addMatch()">
+                    <i class="fas fa-plus-circle me-2"></i>Add Match
+                </button>
+                <button class="btn btn-success mt-3" onclick="saveMatches()">
+                    <i class="fas fa-save me-2"></i>Save Matches
+                </button>
+            </div>
+        </div>
+        
+        <div class="card glass-card">
+            <div class="card-body">
+                <h2 class="card-title">🎟️ Exclusive Betting Codes</h2>
+                <div id="codes-container"></div>
+                <button class="btn btn-primary mt-3" onclick="addCode()">
+                    <i class="fas fa-plus-circle me-2"></i>Add Code
+                </button>
+                <button class="btn btn-success mt-3" onclick="saveCodes()">
+                    <i class="fas fa-save me-2"></i>Save Codes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check for session token on page load
+        if (sessionStorage.getItem('admin-auth')) {
+            document.getElementById('login-section').classList.add('d-none');
+            document.getElementById('admin-panel').classList.remove('d-none');
+            loadData();
+        }
+
+        function login() {
+            const password = document.getElementById('password').value;
+            console.log('Attempting to login with password:', password);
+
+            fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ password })
+            })
+            .then(response => {
+                console.log('Received response from server:', response);
+                if (response.ok) {
+                    alert('Login successful!');
+                    sessionStorage.setItem('admin-auth', 'true');
+                    document.getElementById('login-section').classList.add('d-none');
+                    document.getElementById('admin-panel').classList.remove('d-none');
+                    loadData();
+                } else {
+                    response.text().then(text => {
+                        console.error('Login failed response text:', text);
+                        alert('Login failed: ' + text);
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Login fetch error:', error);
+                alert('An error occurred during login. Check the browser console and make sure the server is running.');
+            });
+        }
+
+        function logout() {
+            sessionStorage.removeItem('admin-auth'); // Clear session token
+            document.getElementById('login-section').classList.remove('d-none');
+            document.getElementById('admin-panel').classList.add('d-none');
+        }
+
+        function loadData() {
+            fetch('/api/matches').then(res => res.json()).then(data => {
+                const container = document.getElementById('matches-container');
+                container.innerHTML = '';
+                data.forEach((match, index) => {
+                    container.innerHTML += createMatchCard(match, index);
+                });
+            });
+
+            fetch('/api/codes').then(res => res.json()).then(data => {
+                const container = document.getElementById('codes-container');
+                container.innerHTML = '';
+                data.forEach((code, index) => {
+                    container.innerHTML += createCodeCard(code, index);
+                });
+            });
+        }
+        
+        function createMatchCard(match, index) {
+            return `
+                <div class="card glass-card mb-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">Match ${index + 1}</h5>
+                            <button class="btn btn-sm btn-outline-danger" onclick="removeItem(this)"><i class="fas fa-trash"></i></button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-2"><label class="form-label">Date</label><input type="text" class="form-control" value="${match.date}"></div>
+                            <div class="col-md-6 mb-2"><label class="form-label">Teams (e.g., Team A vs Team B)</label><input type="text" class="form-control" value="${match.teams}"></div>
+                            <div class="col-md-6 mb-2"><label class="form-label">League/Type</label><input type="text" class="form-control" value="${match.type}"></div>
+                            <div class="col-md-6 mb-2"><label class="form-label">Prediction</label><input type="text" class="form-control" value="${match.prediction}"></div>
+                        </div>
+                    </div>
+                </div>`;
+        }
+        
+        function createCodeCard(code, index) {
+            return `
+                <div class="card glass-card mb-3">
+                    <div class="card-body">
+                         <div class="d-flex justify-content-between">
+                            <h5 class="card-title">Code ${index + 1}</h5>
+                            <button class="btn btn-sm btn-outline-danger" onclick="removeItem(this)"><i class="fas fa-trash"></i></button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 mb-2"><label class="form-label">Code</label><input type="text" class="form-control" value="${code.code}"></div>
+                            <div class="col-md-3 mb-2"><label class="form-label">Odds</label><input type="text" class="form-control" value="${code.odds}"></div>
+                            <div class="col-md-3 mb-2"><label class="form-label">Type (e.g., hot, vip)</label><input type="text" class="form-control" value="${code.type}"></div>
+                            <div class="col-md-3 mb-2"><label class="form-label">Sport (e.g., Football)</label><input type="text" class="form-control" value="${code.sport}"></div>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        function addMatch() {
+            const container = document.getElementById('matches-container');
+            const newIndex = container.children.length;
+            container.insertAdjacentHTML('beforeend', createMatchCard({date: '', teams: '', type: '', prediction: ''}, newIndex));
+        }
+
+        function addCode() {
+            const container = document.getElementById('codes-container');
+            const newIndex = container.children.length;
+            container.insertAdjacentHTML('beforeend', createCodeCard({code: '', odds: '', type: '', sport: ''}, newIndex));
+        }
+        
+        function removeItem(button) {
+            button.closest('.card').remove();
+        }
+
+        function saveMatches() {
+            const matches = [];
+            document.querySelectorAll('#matches-container .card').forEach(card => {
+                const inputs = card.querySelectorAll('input');
+                matches.push({
+                    date: inputs[0].value,
+                    teams: inputs[1].value,
+                    type: inputs[2].value,
+                    prediction: inputs[3].value,
+                });
+            });
+            fetch('/api/matches', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(matches)
+            }).then(response => {
+                if(response.ok) alert('Matches saved successfully!');
+            });
+        }
+
+        function saveCodes() {
+            const codes = [];
+            document.querySelectorAll('#codes-container .card').forEach(card => {
+                const inputs = card.querySelectorAll('input');
+                codes.push({
+                    code: inputs[0].value,
+                    odds: inputs[1].value,
+                    type: inputs[2].value,
+                    sport: inputs[3].value,
+                });
+            });
+            fetch('/api/codes', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(codes)
+            }).then(response => {
+                if(response.ok) alert('Codes saved successfully!');
+            });
+        }
+    </script>
+</body>
+</html>

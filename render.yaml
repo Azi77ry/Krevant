@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: vant-app
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: MONGO_URI
+        fromDatabase:
+          name: vant-db
+          property: connectionString
+      - key: ADMIN_PASSWORD
+        sync: false
+databases:
+  - name: vant-db
+    databaseName: test
+    plan: free
